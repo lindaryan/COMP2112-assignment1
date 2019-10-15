@@ -18,7 +18,6 @@ let toggle = document.querySelector('#switchGif');
 let gifs = [];
 let originalGifs = [];
 
-
 const pollBtn = document.querySelector('#pollbtn')
 // const tweets =  [];
 const tweets = JSON.parse(localStorage.getItem('twitter')) || [];
@@ -80,7 +79,6 @@ function remember() {
   // remember tweets array
   localStorage.setItem('twitter', JSON.stringify(tweets))
 }
-
 function votesToPercentages(votes) {
   const total = votes.a + votes.b + votes.c + votes.d;
   return {
@@ -273,7 +271,7 @@ chooseGif = event => {
     // clear and close gif search area upon gif selection
     browsegifs.innerHTML = '';
     searchGif.value = '';
-    // $('#insertgif').modal('hide');
+    $('#insertgif').modal('hide');
 }
 // function to clear form
 clearForm = () => {
@@ -311,7 +309,6 @@ async function browseEmojis () {
     if (event.target.className != "emoji") {
       return;
     } else {
-      // const selected = event.target.dataset.index;
       textarea.value += event.target.textContent;
     }
   }
